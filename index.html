@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Canal - Noticias y Curiosidades</title>
+    <style>
+        /* Estilos del Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Color de fondo mientras carga */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Asegura que esté por encima de todo */
+            transition: opacity 0.5s ease;
+        }
+
+        #preloader img {
+            width: 150px; /* Ajusta el tamaño de tu GIF aquí */
+            height: auto;
+        }
+
+        /* Clase para ocultar el preloader */
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Estilos básicos de la página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <img src="My Project5-10-2026_17-15-31.gif" alt="Cargando...">
+    </div>
+
+    <header>
+        <h1>Noticias y Curiosidades</h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Última Noticia</h2>
+            <p>¡Bienvenidos a la base de mi sitio web! Aquí subiré todas las novedades del canal.</p>
+        </section>
+
+        <section class="card">
+            <h2>¿Sabías que...?</h2>
+            <p>Pronto habrá nuevas secciones de curiosidades y códigos interesantes.</p>
+        </section>
+    </main>
+
+    <script>
+        // Este evento se dispara cuando TODO (imágenes, scripts, etc.) ha cargado
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            // Añadimos un pequeño retraso de 1 segundo para que se aprecie el GIF
+            // Si quieres que desaparezca instantáneamente, cambia 1000 por 0
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
