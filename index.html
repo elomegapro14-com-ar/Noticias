@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Canal - Noticias y Curiosidades</title>
     <style>
-        /* Estilos del Preloader */
+        /* Estilos del Preloader (sin cambios) */
         #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #ffffff; /* Color de fondo mientras carga */
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999; /* Asegura que esté por encima de todo */
+            z-index: 9999;
             transition: opacity 0.5s ease;
         }
 
         #preloader img {
-            width: 150px; /* Ajusta el tamaño de tu GIF aquí */
+            width: 150px;
             height: auto;
         }
 
-        /* Clase para ocultar el preloader */
         .hidden {
             opacity: 0;
             pointer-events: none;
@@ -42,8 +41,31 @@
         header {
             background-color: #333;
             color: white;
-            padding: 1rem;
+            padding: 2rem 1rem; /* Aumentado el padding vertical */
             text-align: center;
+            display: flex; /* Usamos Flexbox para alinear */
+            justify-content: center; /* Centramos el contenido horizontalmente */
+            align-items: center; /* Centramos verticalmente (opcional, ajustado por margen) */
+            gap: 15px; /* Espacio entre la flecha y el texto */
+        }
+
+        /* Nuevo estilo para el contenedor del título */
+        .title-container {
+            display: flex;
+            align-items: flex-start; /* Alinea la flecha arriba a la izquierda */
+            text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+        }
+
+        /* Estilo para la nueva flecha */
+        header .arrow-gif {
+            width: 50px; /* Tamaño de la flecha, ajústalo si es necesario */
+            height: auto;
+            margin-bottom: 0.5rem; /* Pequeño ajuste para que no toque el texto */
+        }
+
+        header h1 {
+            margin: 0; /* Quitamos márgenes por defecto */
+            font-size: 2.5rem;
         }
 
         main {
@@ -68,7 +90,10 @@
     </div>
 
     <header>
-        <h1>Noticias y Curiosidades</h1>
+        <div class="title-container">
+            <img src="image_3.png" alt="Flecha" class="arrow-gif"> 
+            <h1>Noticias y Curiosidades</h1>
+        </div>
     </header>
 
     <main>
@@ -84,12 +109,8 @@
     </main>
 
     <script>
-        // Este evento se dispara cuando TODO (imágenes, scripts, etc.) ha cargado
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            
-            // Añadimos un pequeño retraso de 1 segundo para que se aprecie el GIF
-            // Si quieres que desaparezca instantáneamente, cambia 1000 por 0
             setTimeout(() => {
                 preloader.classList.add('hidden');
             }, 1000);
